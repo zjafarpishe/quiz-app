@@ -1,4 +1,4 @@
-const url = 'https://opentdb.com/api.php?amount=10&type=multiple'
+const url =localStorage.getItem('url') || 'https://opentdb.com/api.php?amount=10&difficulty=easy&type=multiple'
 let correctAnswerIndex, data
 let questionIndex = 0
 let isSelected = false

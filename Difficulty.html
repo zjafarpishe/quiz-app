@@ -1,24 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-
-    <title>Document</title>
+    <title>quiz app</title>
 </head>
-<body>
-    
-    <div class="container">
-        <div class="Difficulty">
-            <span class="name"></span>
-            <span class="score"></span>
 
-        </div>
-       
+<body>
+    <div class="container">
+        <div class="btn Easy">Easy</div>
+        <div class="btn Medium">Medium</div>
+        <div class="btn Hard">Hard</div>
 
     </div>
 
-    <script src="/Difficulty.js"></script>
+
+    <script>
+        const easyBtn = document.querySelector('.Easy')
+        const mediumBtn = document.querySelector('.Medium')
+        const hardBtn = document.querySelector('.Hard')
+        let level
+
+        easyBtn.addEventListener('click',()=>SetLevel('easy'))   
+        mediumBtn.addEventListener('click',()=>SetLevel('medium'))
+        hardBtn.addEventListener('click',()=>SetLevel('hard'))
+
+        function SetLevel(level){
+            localStorage.setItem('url', `https://opentdb.com/api.php?amount=10&difficulty=${level}&type=multiple`)
+            window.location.assign("/")
+        }
+    </script>
 </body>
+
 </html>
