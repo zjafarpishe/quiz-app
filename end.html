@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+    <title>end</title>
+</head>
+
+<body>
+    <div class="container">
+        <input placeholder="enter user names" type="text" />
+        <a class="btn save">save</a>
+        <a href="/game.html" class="btn">Play Again</a>
+        <a href="/" class="btn">Home</a>
+
+    </div>
+
+
+    <script>
+        const score = JSON.parse(localStorage.getItem('score'))
+        const higherScore = JSON.parse(localStorage.getItem("higherScore") || [])
+        const saveBTN = document.querySelector(".save")
+        const userName = document.querySelector('input')
+
+        console.log(higherScore);
+        saveBTN.addEventListener('click', () => {
+            if (!userName.value || !score) {
+                alert("invalid user or score")
+            }
+            else {
+                higherScore.push({ name: userName.value, score })
+                higherScore.sort((a, b) => b.score - a.score)
+                higherScore0.splice(10)
+                localStorage.setItem('higherScore', JSON.stringify(higherScore))
+                window.location.assign('/')
+            }
+        })
+
+    </script>
+</body>
+
+</html>

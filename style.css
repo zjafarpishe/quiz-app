@@ -1,0 +1,207 @@
+body {
+    background-color: rgb(188, 186, 186);
+    overflow: hidden;
+}
+
+
+.container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn {
+    background-color: white;
+    color: purple;
+    width: 200px;
+    height: 50px;
+    margin-bottom: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.game_container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+
+.BoxScores,
+.questionNumber {
+    border-radius: 5px;
+    padding: 5px;
+    background-color: white;
+    color: purple;
+}
+
+.text {
+    color: purple;
+}
+
+.header {
+    display: flex;
+    width: calc(100vw /2);
+}
+
+.mainBox {
+    width: calc(100vw /2);
+}
+
+.question {
+    width: 100%;
+    background-color: purple;
+    color: white;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 30px 0;
+}
+
+.answer {
+    width: 100%;
+    background-color: white;
+    color: purple;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.btnQuestion {
+    width: 100px;
+    border-radius: 10px;
+    border: 1px solid purple;
+    padding: 5px 0;
+    color: purple;
+    font-weight: bold;
+    margin-top: 10px;
+
+}
+
+.correct {
+    background-color: rgb(23, 228, 23);
+    color: white;
+}
+
+.incorrect {
+    background-color: rgb(228, 23, 23);
+    color: white;
+}
+
+input {
+    border: 1px solid white;
+    width: 200px;
+    height: 50px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 10px;
+    color: purple;
+    outline: none;
+    background-color: transparent;
+}
+
+
+.loader {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    border: 3px solid;
+    border-color: #FFF #FFF transparent transparent;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+}
+
+.loader::after,
+.loader::before {
+    content: '';
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    border: 3px solid;
+    border-color: transparent transparent purple rgb(73, 7, 73);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    animation: rotationBack 0.5s linear infinite;
+    transform-origin: center center;
+}
+
+.loader::before {
+    width: 32px;
+    height: 32px;
+    border-color: #FFF #FFF transparent transparent;
+    animation: rotation 1.5s linear infinite;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotationBack {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+
+.loading {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+}
+
+.BoxScore {
+    padding: 10px;
+    background-color: white;
+    width: 150px;
+    border-radius: 10px;
+    display: flex;
+    margin-top: 5px;
+}
+
+.higherScore{
+    flex: 5
+}
+
+.scoreBox{
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    background-color: purple;
+    border-radius: 10px;
+    color: white;
+
+}
